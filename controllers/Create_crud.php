@@ -25,10 +25,6 @@ class Create_crud extends CI_Controller {
         $cdata['action']="create_crud/save";
         $cdata['edit_action']="role/update";
         $data['title']="Create CRUD";
-        $cdata['all_notices'] = $this->create_crud_model->all_notice();
-
-        //print_r($cdata['all_role']);exit();
-
         $data['nav']=$this->load->view('nav','',TRUE);
         $data['content']=$this->load->view('crud/crud_form',$cdata,TRUE);
         $this->load->view('home',$data);
@@ -41,7 +37,6 @@ class Create_crud extends CI_Controller {
         $table_name=$this->input->post('table_name',true);
         $get_table_info= $this->create_crud_model->get_table_info($table_name);
         $count=count($get_table_info);
-        //echo $count;exit();
         if($count!=0) {
             echo 1;
         }else{
@@ -86,7 +81,7 @@ class Create_crud extends CI_Controller {
         $edit_url="\"<?php echo base_url();?>$table_name/edit_$table_name/";
         $delete_url="\"<?php echo base_url();?>$table_name/delete_$table_name/";
         $all='$all->';
-		
+        
 $newFileContent = "
 <?php
     /*
@@ -104,45 +99,45 @@ class $controller_page extends CI_Controller {
 
 
     public function index()
-	{
-	    $all_data=$load_method all();
+    {
+        $all_data=$load_method all();
 
-		$load(\"$view_path/$view_page\",$all_data_without_array);
-	}
+        $load(\"$view_path/$view_page\",$all_data_without_array);
+    }
 
     public function add_$table_name()
-	{
-	    $all_action='save_$table_name';
-		$load(\"$view_path/$view_page"."_form\",$all_data_without_array);
-	}
+    {
+        $all_action='save_$table_name';
+        $load(\"$view_path/$view_page"."_form\",$all_data_without_array);
+    }
     public function save_$table_name()
-	{
-	    $data=$load_input post();
+    {
+        $data=$load_input post();
 
-	    $load_method save_$table_name($data);
-	    redirect(\"$table_name\");
-	}
+        $load_method save_$table_name($data);
+        redirect(\"$table_name\");
+    }
 
     public function edit_$table_name($id)
-	{
-	    $all_action='update_$table_name/'.$id;
-	    $all_data=$load_method $table_name_by_id($id);
-		$load(\"$view_path/$view_page"."_form\",$all_data_without_array);
-	}
+    {
+        $all_action='update_$table_name/'.$id;
+        $all_data=$load_method $table_name_by_id($id);
+        $load(\"$view_path/$view_page"."_form\",$all_data_without_array);
+    }
 
     public function update_$table_name($id)
-	{
-	    $data=$load_input post();
+    {
+        $data=$load_input post();
 
-	    $load_method update_$table_name($data,$id);
-	    redirect(\"$table_name\");
-	}
+        $load_method update_$table_name($data,$id);
+        redirect(\"$table_name\");
+    }
 
     public function delete_$table_name($id)
-	{
-	    $load_method delete_$table_name($id);
-	    redirect(\"$table_name\");
-	}
+    {
+        $load_method delete_$table_name($id);
+        redirect(\"$table_name\");
+    }
 
 }";
 
@@ -277,8 +272,6 @@ isset($all $get_table->COLUMN_NAME)?$all $get_table->COLUMN_NAME:''?></textarea>
             $i++;
 
         }
-
-        //$get_controller_var_all='all';
 
         $viewFileContent = '
 <?php
