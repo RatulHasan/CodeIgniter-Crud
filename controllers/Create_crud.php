@@ -1,6 +1,7 @@
 <?php
     /*
     *   Author= Ratul Hasan
+    * email: ratuljh@gmail.com
     */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
