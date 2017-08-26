@@ -6,3 +6,5 @@
 4) All you have to give your desire (database) table name.
 5) And view path (Where you want to store your view file) exclude views folder name, such employee not views/employee.
 6) click Save and it's done.
+
+<a href="https://github.com/RatulHasan/CodeIgniter-Crud"><img src="https://img.shields.io/npm/l/vue.svg" alt="License"></a>
